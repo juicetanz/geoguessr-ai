@@ -1,3 +1,6 @@
+# This training code was taken from the pytorch examples github:
+# https://github.com/pytorch/examples/blob/main/imagenet/main.py
+
 import argparse
 import os
 import random
@@ -44,6 +47,8 @@ parser.add_argument('-b', '--batch-size', default=256, type=int,
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when '
                          'using Data Parallel or Distributed Data Parallel')
+parser.add_argument('--multi-label', action='store_true',
+                    help='multi-label model (aka image tagging)')
 parser.add_argument('--lr', '--learning-rate', default=0.1, type=float,
                     metavar='LR', help='initial learning rate', dest='lr')
 parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
@@ -59,6 +64,8 @@ parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
                     help='evaluate model on validation set')
 parser.add_argument('--pretrained', dest='pretrained', action='store_true',
                     help='use pre-trained model')
+parser.add_argument('--resolution', default=224, type=int, metavar='N',
+                    help='input NxN image resolution of model (default: 224x224) ')
 parser.add_argument('--world-size', default=-1, type=int,
                     help='number of nodes for distributed training')
 parser.add_argument('--rank', default=-1, type=int,
@@ -294,7 +301,10 @@ def main_worker(gpu, ngpus_per_node, args):
                 'state_dict': model.state_dict(),
                 'best_acc1': best_acc1,
                 'optimizer' : optimizer.state_dict(),
-                'scheduler' : scheduler.state_dict()
+                'scheduler' : scheduler.state_dict(),
+                'num_classes': len(train_dataset.classes),
+                'resolution': args.resolution,
+                'multi_label': args.multi_label,
             }, is_best)
 
 
@@ -406,10 +416,10 @@ def validate(val_loader, model, criterion, args):
     return top1.avg
 
 
-def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
+def save_checkpoint(state, is_best, filename='models/checkpoint.pth.tar'):
     torch.save(state, filename)
     if is_best:
-        shutil.copyfile(filename, 'model_best.pth.tar')
+        shutil.copyfile(filename, 'models/model_best.pth.tar')
 
 class Summary(Enum):
     NONE = 0
