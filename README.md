@@ -2,6 +2,8 @@
 
 A project intended to determine the location of images.
 
+![description](path)
+
 ## Algorithm
 
 The AI is built on the ImageNet image classification model, re-trained with a Geoguessr dataset using resnet-18 and PyTorch.
@@ -17,4 +19,4 @@ The AI is built on the ImageNet image classification model, re-trained with a Ge
 
 4. When the command finishes, an output image will appear in your folder.
 
-[Video explanation](link)
+[Here is a video demonstration of my project](link)
