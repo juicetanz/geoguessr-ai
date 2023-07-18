@@ -2,7 +2,7 @@
 
 A project intended to determine the location of images.
 
-![description](path)
+![An example of the model's output](canvas_1629282396.jpg)
 
 ## Algorithm
 
