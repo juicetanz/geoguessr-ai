@@ -2,7 +2,7 @@
 
 A project intended to determine the location of images.
 
-![An example of the model's output](https://github.com/juicetanz/geoguessr-ai/blob/main/canvas_1629282396.jpg)
+![An example of the model's output](output.jpg)
 
 ## Algorithm
 
