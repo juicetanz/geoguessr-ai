@@ -1,6 +1,6 @@
 # geoguessr-ai
 
-A project intended to determine the location of images.
+A project intended to determine the location of images that I made to help me learn the geography of countries.
 
 ![An example of the model's output](output.jpg)
 
