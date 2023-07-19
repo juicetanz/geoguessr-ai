@@ -12,7 +12,7 @@ The AI is built on the ImageNet image classification model, re-trained with a Ge
 
 1. SSH into your Nano and clone the [jetson-inference](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo.md) library to it.
 
-2. Download the `.zip` file of the latest release to a folder of your choice on your Nano.
+2. Download and unzip the latest release into a folder of your choice on your Nano.
 
 3. `cd` into the folder with the console.
 
