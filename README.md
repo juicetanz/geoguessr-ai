@@ -21,4 +21,4 @@ The AI is built on the ImageNet image classification model, re-trained with a Ge
 
 5. When the command finishes, `output.jpg` will appear in your folder.
 
-[Here is a video demonstration of my project](https://youtu.be/MxcK5CEQdI0)
+[Here is a video demonstration of my project](https://youtu.be/mATL3MiuqZ4)
