@@ -1,6 +1,6 @@
 # geoguessr-ai
 
-A project intended to determine the location of images based on Google Street View images of countries.
+A project intended to determine the location of images based on Google Street View data of countries.
 
 ![An example of the model's output](output.jpg)
 
