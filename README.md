@@ -17,7 +17,7 @@ The AI is built on the ImageNet image classification model, re-trained with a Ge
 3. `cd` into the folder with the console.
 
 4. Run the following command, replacing `[IMAGE PATH]` with the path of the file of your choice:
-   `python imagenet.py --model=resnet18.onnx --labels=labels.txt --input_blob=input_0 --output_blob=output_0 [IMAGE PATH] output.jpg`
+   `python3 imagenet.py --model=resnet18.onnx --labels=labels.txt --input_blob=input_0 --output_blob=output_0 [IMAGE PATH] output.jpg`
 
 5. When the command finishes, `output.jpg` will appear in your folder.
 
