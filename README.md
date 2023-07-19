@@ -1,6 +1,6 @@
 # geoguessr-ai
 
-A project intended to determine the location of images, able to be run on a Jetson Nano with the jetson-inference library.
+A project intended to determine the location of images.
 
 ![An example of the model's output](output.jpg)
 
